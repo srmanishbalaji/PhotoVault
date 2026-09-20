@@ -37,7 +37,7 @@ export default function EventDetails() {
       setError('')
 
       const res = await axios.get(
-        `http://localhost:8000/photos/${id}`,
+        `https://photovault-api-dvdj.onrender.com/photos/${id}`,
         { headers }
       )
 
@@ -50,7 +50,7 @@ export default function EventDetails() {
   const fetchMembers = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/events/${id}/members`,
+        `https://photovault-api-dvdj.onrender.com/events/${id}/members`,
         { headers }
       )
 
@@ -68,7 +68,7 @@ export default function EventDetails() {
       setError('')
 
       await axios.post(
-        `http://localhost:8000/events/${id}/members`,
+        `https://photovault-api-dvdj.onrender.com/events/${id}/members`,
         { email: memberEmail },
         { headers }
       )
@@ -98,7 +98,7 @@ export default function EventDetails() {
         formData.append('file', file)
 
         await axios.post(
-          `http://localhost:8000/photos/${id}/upload`,
+          `https://photovault-api-dvdj.onrender.com/photos/${id}/upload`,
           formData,
           { headers }
         )
@@ -121,7 +121,7 @@ export default function EventDetails() {
       setError('')
 
       await axios.patch(
-        `http://localhost:8000/photos/${photoId}/select`,
+        `https://photovault-api-dvdj.onrender.com/photos/${photoId}/select`,
         {},
         { headers }
       )
@@ -143,7 +143,7 @@ export default function EventDetails() {
       setError('')
 
       const res = await axios.post(
-        'http://localhost:8000/galleries/',
+        'https://photovault-api-dvdj.onrender.com/galleries/',
         {
           event_id: parseInt(id),
           pin,

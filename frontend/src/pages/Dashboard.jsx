@@ -10,6 +10,7 @@ export default function Dashboard() {
     name: '',
     description: '',
   })
+
   const [loading, setLoading] = useState(true)
   const [creating, setCreating] = useState(false)
   const [error, setError] = useState('')
@@ -34,7 +35,7 @@ export default function Dashboard() {
       setError('')
 
       const res = await axios.get(
-        'http://localhost:8000/events/',
+        'https://photovault-api-dvdj.onrender.com/events/',
         { headers }
       )
 
@@ -54,7 +55,7 @@ export default function Dashboard() {
       setError('')
 
       await axios.post(
-        'http://localhost:8000/events/',
+        'https://photovault-api-dvdj.onrender.com/events/',
         newEvent,
         { headers }
       )
